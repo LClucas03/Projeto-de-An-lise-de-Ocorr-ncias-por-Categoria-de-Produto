@@ -1,0 +1,7 @@
+my_project/
+│
+├── README.md
+├── .gitignore
+├── src/
+│   └── main.py
+└── requirements.txt
