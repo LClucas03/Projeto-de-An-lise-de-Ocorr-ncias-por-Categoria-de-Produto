@@ -1,0 +1,44 @@
+# Importando as bibliotecas necessárias
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Dados do produto e das narrativas
+data = {
+    'product': ['credit_card', 'credit_card', 'retail_banking', 'credit_reporting', 
+                'credit_reporting', 'credit_reporting', 'credit_reporting', 
+                'credit_reporting', 'credit_reporting', 'credit_reporting', 
+                'mortgages_and_loans', 'credit_card', 'credit_card', 'credit_reporting'],
+    
+    'narrative': ['purchase order day shipping amount receive product week sent followup email',
+                  'forwarded message date tue subject please investigate comenity bank',
+                  'forwarded message cc sent friday pdt subject final legal payment well fargo',
+                  'payment history missing credit report specialized loan servicing',
+                  'payment history missing credit report made mistake put account forbearance',
+                  'payment history missing credit report made mistake put account forbearance',
+                  'va date complaint experian credit bureau involved decision maker stop',
+                  'account reported abbreviated name full name servicer account transunion',
+                  'account reported abbreviated name full name servicer account experian',
+                  'usdoexxxx account reported abbreviated name full name servicer account reporting',
+                  'beginning mortgage held mb financial mb mortgage portfolio purchased',
+                  'called request new york state covid relief plan day interest fee waived amex',
+                  'capital one secured credit account opened name closed outstanding balance',
+                  'collection account acct opened balance account acct opened balance']
+}
+
+# Criando um DataFrame com os dados
+df = pd.DataFrame(data)
+
+# Contando o número de ocorrências para cada produto
+product_counts = df['product'].value_counts()
+
+# Criando o gráfico de barras
+plt.figure(figsize=(10, 6))
+product_counts.plot(kind='bar', color='skyblue')
+plt.title('Número de Ocorrências por Categoria de Produto')
+plt.xlabel('Produto')
+plt.ylabel('Número de Ocorrências')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Exibindo o gráfico
+plt.show()
